@@ -2,44 +2,22 @@
 
 import time
 
-from mouse import mouse
+# import pyautogui
+from pynput.mouse import Button, Controller
 
-
-def mouse_pose():
-    # Get mouse click position
-    while(True):
-        time.sleep(0.01)
-
-        if(mouse.is_pressed(button='left')):
-            print(mouse.get_position())
-
-        if(mouse.wheel() != None):
-            print(mouse.wheel())
-
-
-def mouse_click(posx: int, posy: int, click_count: int = 1, button: str = 'left'):
+def mouse_click(posx: int = None, posy: int = None, click_count: int = 1, button: Button = Button.left, mouse: Controller = Controller()):
     time.sleep(0.8)
-    mouse.move(str(posx), str(posy), absolute=True, duration=0.1)
+    if posx is not None and posy is not None:
+        mouse.position = (posx, posy)
     time.sleep(0.4)
     for i in range(0, click_count):
-        mouse.click(button='left')
+        mouse.click(button, 1)
         time.sleep(0.4)
 
-
 def main():
-    # mouse.move("500", "500", absolute=True, duration=0.2)
-    # mouse.click() # default to left click
-    # mouse.right_click()
-    # mouse.double_click(button='left')
-    # mouse.double_click(button='right')
-    # mouse.press(button='left')
-    # mouse.release(button='left')
+    mouse = Controller()
 
-    mouse.click()  # First click to avoid "First click ingored" issue
     time.sleep(4.0)
-
-    # mouse_pose()
-    # exit()
 
     # On Main Menu, click on "Play"
     print("Click on Play")
@@ -118,10 +96,9 @@ def main():
 
     # On Map, scroll down on tower list
     print("Scroll down on tower list")
-    mouse.move("2431", "1011", absolute=True, duration=0.2)
-    mouse.press(button='left')
-    mouse.move("0", "-350", absolute=False, duration=0.2)
-    mouse.release(button='left')
+    mouse.position = (2431, 1011)
+    time.sleep(0.1)
+    mouse.scroll(0, -20)
     time.sleep(0.5)
 
     # On Map, click on magician money tower
