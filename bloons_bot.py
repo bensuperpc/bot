@@ -2,7 +2,8 @@
 
 import time
 
-import mouse
+from mouse import mouse
+
 
 def mouse_pose():
     # Get mouse click position

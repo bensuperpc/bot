@@ -1,0 +1,3 @@
+[submodule "mouse"]
+	path = mouse
+	url = git@github.com:boppreh/mouse.git
