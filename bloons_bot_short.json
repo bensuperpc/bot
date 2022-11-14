@@ -372,39 +372,6 @@
             "delay": 0.8,
             "interval": 0.4,
             "condition": []
-        },
-        {
-            "name": "click",
-            "type": "click",
-            "information": "click to avoid game to pause and level up message, ~332 seconds",
-            "posx": 1103,
-            "posy": 698,
-            "click_count": 207,
-            "delay": 0.8,
-            "interval": 0.4,
-            "condition": []
-        },
-        {
-            "name": "click",
-            "type": "click",
-            "information": "click on next button",
-            "posx": 1275,
-            "posy": 1209,
-            "click_count": 1,
-            "delay": 0.8,
-            "interval": 0.4,
-            "condition": []
-        },
-        {
-            "name": "click",
-            "type": "click",
-            "information": "click on home button",
-            "posx": 928,
-            "posy": 1119,
-            "click_count": 1,
-            "delay": 0.8,
-            "interval": 0.4,
-            "condition": []
         }
     ]
 }
